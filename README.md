@@ -4,7 +4,19 @@
 Oh, if you are reading this, you must be stalking my GitHub account. Which must mean that I linked it in my resume or something... 
 In that case, hello recruiter! This script is likely how I found you! How do you feel about that?
 
-Now I am going to make a tier list of my favorite songs by The Smiths.
+### Usage
+I used uv instead of pip for managing packages. You can run this yourself using the following steps
+1. Clone the repo
+2. Put your preferences in job-boards.yml and user.yml
+3. Update packages:
+
+    `uv sync`
+4. Run the script:
+
+    `python main.py`
+
+
+This has been fun. Now I am going to make a tier list of my favorite songs by The Smiths.
 
 ### S-Tier
 * **Last Night I Dreamt That Somebody Loved Me** - This song makes me feel like I'm leaving behind something that promised me all my greatest dreams and didn't deliver. It tears my heard right out and then tucks me into bed. Plus the riff Johnny plays throughout is so fun to play. I could play this all day.
