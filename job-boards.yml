@@ -1,0 +1,5 @@
+job-boards:
+    - name: LinkedIn
+      link: "https://www.linkedin.com/jobs/search?trk=guest_homepage-basic_guest_nav_menu_jobs&position=1&pageNum=0"
+    - name: Indeed
+      link: "https://www.indeed.com/"
