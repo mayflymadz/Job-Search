@@ -4,7 +4,7 @@ import yaml
 
 class JobLoader:
     """Class for loading job data from a file and saving the scraped job listings to a yaml file for analysis."""
-    def __init__(self, boards_path: str = "job-boards.yml", output_path: str = "../output/job_listings.yml"):
+    def __init__(self, boards_path: str = "job-boards.yml", output_path: str = "job_listings.yml"):
         self.boards_path = pathlib.Path(boards_path)
         self.output_path = pathlib.Path(output_path)
         self.boards = self._load_job_boards()

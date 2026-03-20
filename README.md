@@ -4,7 +4,7 @@
 Oh, if you are reading this, you must be stalking my GitHub account. Which must mean that I linked it in my resume or something... 
 In that case, hello! If you are a recruiter, this script is likely how I found you! How do you feel about that?
 
-And, no, this code is not very professional, as you can see from my comments and othe antics. Forgive me for trying to have a little *fun* in the fiery hellscape that is the job market. 
+And, no, this code is not very professional, as you can see from my comments and other antics. Forgive me for trying to have a little *fun* in the fiery hellscape that is the job market. 
 
 ### Usage
 You're going to want to run this in a virtual environment

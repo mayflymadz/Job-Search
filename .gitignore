@@ -11,3 +11,5 @@ wheels/
 
 # Other things
 /output/job_listings.yml
+/src/output/job_listings.yml
+job_listings.yml
