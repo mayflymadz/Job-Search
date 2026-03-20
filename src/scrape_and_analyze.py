@@ -28,7 +28,8 @@ def main():
     #     scraper.scrape(board)
 
     # Now that we've scraped the job listings, let's see what the bot thinks
-    bot = ai_analyzer.AIAnalyzer(pathlib.Path("output/job_listings.yml"), pathlib.Path("user.yml"))
+    script_dir = pathlib.Path(__file__).parent
+    bot = ai_analyzer.AIAnalyzer(script_dir / "job_listings.yml", pathlib.Path("user.yml"))
     analysis = bot.analyze_listings()
     print("AI Analysis of Job Listings:")
     print(analysis)

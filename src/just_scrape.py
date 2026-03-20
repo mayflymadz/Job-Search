@@ -17,15 +17,15 @@ import ai_analyzer
 
 
 def main():
-    print("Hello from job-tool!")
+    # Pull up the loader and scraper
     loader = job_loader.JobLoader("job-boards.yml")
     scraper = job_scraper.JobScraper()
     
-    # Comment this out when testing the AI analyzer without scraping
+    # Scrape each job board and put it in a list for the loader to save
+    job_listings = []
     for board in loader.boards:
-        scraper.scrape(board)
-
-
+        job_listings.extend(scraper.scrape(board))
+    loader.save_job_listings(job_listings)
 
 if __name__ == "__main__":
     main()

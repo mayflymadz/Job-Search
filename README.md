@@ -4,6 +4,8 @@
 Oh, if you are reading this, you must be stalking my GitHub account. Which must mean that I linked it in my resume or something... 
 In that case, hello! If you are a recruiter, this script is likely how I found you! How do you feel about that?
 
+And, no, this code is not very professional, as you can see from my comments and othe antics. Forgive me for trying to have a little *fun* in the fiery hellscape that is the job market. 
+
 ### Usage
 You're going to want to run this in a virtual environment
 1. Clone the repo
@@ -35,9 +37,13 @@ This has been fun. Now I am going to make a tier list of some of the most popula
 ### A-Tier
 * **Please, Please, Please, Let Me Get What I Want This Time** - There's a cover of this song in one of my favorite childhood movies, Sky High. It's so good. Kinda fun to strum on acoustic guitar when you're in the mood. Love it. 
 * **This Charming Man** - *PUNCTUUUURED BICYCLEEEEE* Yeah this is a bop. Undisputed. I'll try to be charming, Morrissey.
-* **Girlfriend In A Coma** - This is my dad's favorite Smith's song.
+* **Girlfriend In A Coma** - This is my dad's favorite Smiths song.
+* **Cemetary Gates**
 
 ### B-Tier
-* **Bigmouth Strikes Again** - I mean, it's great. I love this song. Just doesn't hit me quite like the others do. 
+* **Bigmouth Strikes Again** - I mean, it's great. I love this song. Not much else to say. 
+* **Half a Person** - I wish that was the story of my life. Not fair
+
+The Smiths are not capable of creating anything less than B-Tier
 
 I'm going to stop writing this tier list now so I can write code. Maybe I'll work on it when I'm bored. 

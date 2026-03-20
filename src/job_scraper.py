@@ -7,38 +7,52 @@ from bs4 import BeautifulSoup
 
 class JobScraper:
     """Class for scraping LinkedIn and Indeed for job postings."""
-
-    def scrape(self, board: dict) -> None:
+    def scrape(self, board: dict) -> list:
         """Scrape data from a job board."""
         name = board.get("name", "Unknown")
         link = board.get("link", "")
         if not link:
             print(f"No link provided for {name}.")
-            return
+            return []
+        
+        all_job_listings = []
 
         print(f"Scraping {name} at {link}...")
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.9",
+            "Referer": "https://www.google.com/",
+        }
+
         try:
-            response = requests.get(link, timeout=10)
+            response = requests.get(link, headers=headers, timeout=15)
             response.raise_for_status()
             soup = BeautifulSoup(response.text, 'html.parser')
             
             # Start with LinkedIn
-            if board.get("name").lower() == "linkedin":
-                self._scrape_linkedin(soup)
+            board_type = board.get("type", "").lower()
+            if board_type == "linkedin":
+                all_job_listings.extend(self._scrape_linkedin(soup))
             # Then try Indeed         
-            elif board.get("name").lower() == "indeed":
-                self._scrape_indeed(soup)
+            elif board_type == "indeed":
+                all_job_listings.extend(self._scrape_indeed(soup))
             else:
                 print(f"I haven't implemented scraping for: {name}")
 
-            
-
+        except requests.HTTPError as e:
+            print(f"HTTP error fetching {name}: {e}")
         except requests.RequestException as e:
-            print(f"Error fetching {name}: {e}")
+            print(f"Network error fetching {name}: {e}")
+        except Exception as e:
+            print(f"Unexpected error fetching {name}: {e}")
+
+        # Save the job listings to a yaml file for analysis.
+        return all_job_listings
     
-    def _scrape_linkedin(self, soup: BeautifulSoup) -> None:
-        """Scrape LinkedIn for job postings based on preferences."""
-        print("Scraping LinkedIn... (not implemented yet)")
+    def _scrape_linkedin(self, soup: BeautifulSoup) -> list:
+        """Scrape LinkedIn for job postings."""
+        print("Scraping LinkedIn...")
         job_urls = []
 
         # gotta get the job urls first
@@ -95,24 +109,13 @@ class JobScraper:
             }
             job_listings.append(job_details)
 
-        # Save the job listings to a yaml file for AI parsing later
-        self._save_job_listings(job_listings)
         print(f"Scraped {len(job_listings)} job listings from LinkedIn. Hopefully it worked!")
+        return job_listings
 
     def _scrape_indeed(self, soup: BeautifulSoup) -> None:
         """Scrape Indeed for job postings based on preferences."""
         print("Scraping Indeed... (not implemented yet)")
 
-    def _save_job_listings(self, job_listings: list[dict]) -> None:
-        """Throw the job listing in a yaml file. Note, the 'w' option will overwrite the file each time."""
-        try:
-            output_path = pathlib.Path("output/job_listings.yml")
-            output_path.parent.mkdir(parents=True, exist_ok=True)
-            with output_path.open("w", encoding="utf-8") as file:
-                yaml.dump({"job-listings": job_listings}, file, allow_unicode=True)
-            print(f"Saved {len(job_listings)} job listings to {output_path}")
-        except Exception as e:
-            print(f"Error saving job listings: {e}")
 
     
 

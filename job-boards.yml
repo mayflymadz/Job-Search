@@ -1,5 +1,10 @@
 job-boards:
-    - name: LinkedIn
+    - name: LinkedIn - General
+      type: LinkedIn
       link: "https://www.linkedin.com/jobs/search?trk=guest_homepage-basic_guest_nav_menu_jobs&position=1&pageNum=0"
-    - name: Indeed
-      link: "https://www.indeed.com/"
+    - name: LinkedIn - Boise Software
+      type: LinkedIn
+      link: https://www.linkedin.com/jobs/search?trk=guest_homepage-basic_guest_nav_menu_jobs&position=1&pageNum=0
+    - name: LinkedIn - Remote Software
+      type: LinkedIn
+      link: https://www.linkedin.com/jobs/search?keywords=Software%20Engineer&location=United%20States&geoId=103644278&f_TPR=&f_WT=2&position=1&pageNum=0
