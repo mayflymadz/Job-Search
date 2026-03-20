@@ -106,7 +106,8 @@ class JobScraper:
     def _save_job_listings(self, job_listings: list[dict]) -> None:
         """Throw the job listing in a yaml file. Note, the 'w' option will overwrite the file each time."""
         try:
-            output_path = pathlib.Path("job_listings.yml")
+            output_path = pathlib.Path("output/job_listings.yml")
+            output_path.parent.mkdir(parents=True, exist_ok=True)
             with output_path.open("w", encoding="utf-8") as file:
                 yaml.dump({"job-listings": job_listings}, file, allow_unicode=True)
             print(f"Saved {len(job_listings)} job listings to {output_path}")

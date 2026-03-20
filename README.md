@@ -2,21 +2,29 @@
 ## Affectionately naming this project 'If You Can't Beat Them, Join Them'
 
 Oh, if you are reading this, you must be stalking my GitHub account. Which must mean that I linked it in my resume or something... 
-In that case, hello recruiter! This script is likely how I found you! How do you feel about that?
+In that case, hello! If you are a recruiter, this script is likely how I found you! How do you feel about that?
 
 ### Usage
-I used uv instead of pip for managing packages. You can run this yourself using the following steps
+You're going to want to run this in a virtual environment
 1. Clone the repo
 2. Put your preferences in job-boards.yml and user.yml
-3. Update packages:
+3. Start Virtual Environment:
 
-    `uv sync`
+    `source .venv/bin/activate`
 4. Run the script:
 
-    `python main.py`
+    `uv run just_scrape.py`
+
+    or 
+
+    `python just_scrape.py`
+
+    or whatever you wanna do. I'm not your dad. 
+
+**just_scrape.py will put the scraped job listings in the output folder. When I have it working, scrape_and_analyze.py will do that and run a custom analysis on which jobs look like a good fit. For now, you can feed the output from just_scrape.py into your chosen NLP for a breakdown of the best options**
 
 
-This has been fun. Now I am going to make a tier list of my favorite songs by The Smiths.
+This has been fun. Now I am going to make a tier list of some of the most popular songs by The Smiths, arbitrarily chosen.
 
 ### S-Tier
 * **Last Night I Dreamt That Somebody Loved Me** - This song makes me feel like I'm leaving behind something that promised me all my greatest dreams and didn't deliver. It tears my heard right out and then tucks me into bed. Plus the riff Johnny plays throughout is so fun to play. I could play this all day.
